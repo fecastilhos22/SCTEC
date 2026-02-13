@@ -12,19 +12,24 @@
         <h1>Fernanda</h1>
 
         <nav> <!-- Seção de navegação do Site -->
-            <ul></ul><!-- Lista não ordenada para links do nosso menu. -->
-            <li>Sobre mim </li>
-            <li>Projetos/li>
-            <li>Contato</li>
-          
+            <ul><!-- Lista não ordenada para links do nosso menu. -->
+                <li><a href="#sobre">Sobre mim</a></li>
+                <li><a href="#projeto">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="https://google.com.br" target="_blank">Google</a></li>
+            </ul>
         </nav>
 
     </header>
 
-    <section>
-        <h2><Sobre mim</h2>
+    <section id="sobre"><!--mais fácil fazer com seções e com identificador para depois chamar-->
+        <!--Section e article Cada <section> deve ser identificado, geralmente incluindo um cabeçalho (elemento <h1>-<h6>) como um filho do elemento <section>.
+        Se faz sentido distribuir separadamente o conteúdo de um elemento , use um elemento <article> em seu lugar.
+        Não use o elemento <section> como um container genérico; para isso que a <div> serve, especialmente quando a seção é apenas com propósito de estilização. Uma regra de ouro é quando um seção deve aparecer logicamente na estrutura de um documento.-->
+        <h2>Sobre mim</h2>
 
-        <img src="C:\Users\fernandabecker\Pictures\cat.jpg" alt="gato">    
+        <img src="cat.jpg" alt="foto"
+            title="Imagem de perfil"><!--alt é o que aparece quando não abre a imagem e title quando coloca o mouse em cima da imagem-->
 
         <article>
 
@@ -34,8 +39,55 @@
 
 
         </article>
+
+        <aside>
+            <h3>Habilidades</h3>
+
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+
+            </ul>
+
+        </aside>
+
     </section>
 
+    <section id="projeto">
+
+        <h2>Projetos</h2>
+
+        <article>
+            <h3>Portifólio</h3>
+
+            <p>
+                Este foi o primeiro site que desenvolvi, estudando front-end
+            </p>
+
+
+        </article>
+
+    </section>
+
+    <footer>
+        <p>Direitos reservados</p>
+
+        <section id="contato">
+
+            <h2>Contato</h2>
+
+            <p>Tem um projeto em mente? Entre em contato.</p>
+
+            <address>
+                E-mail: <a href="malito:fernanda@fernanda.com.br">fernanda@fernanda.com.br</a><br>
+                Telefone: <a href="tel:999999999">99999999</a>
+            </address>
+
+
+        </section>
+
+    </footer><!--rodapé-->
 </body>
 
 </html>
