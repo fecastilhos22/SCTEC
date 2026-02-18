@@ -28,7 +28,7 @@
         Não use o elemento <section> como um container genérico; para isso que a <div> serve, especialmente quando a seção é apenas com propósito de estilização. Uma regra de ouro é quando um seção deve aparecer logicamente na estrutura de um documento.-->
         <h2>Sobre mim</h2>
 
-        <img src="cat.jpg" alt="foto"
+        <img src="html.jpg" alt="foto"
             title="Imagem de perfil"><!--alt é o que aparece quando não abre a imagem e title quando coloca o mouse em cima da imagem-->
 
         <article>
@@ -70,6 +70,45 @@
 
     </section>
 
+    <section id="habilidades">
+
+        <h2>Habilidades e Tecnologias</h2>
+
+        <table>
+
+            <thead><!--agrupa as informações do cabeçalho-->
+                <tr><!--linhas-->
+                    <th>Tecnologia</th><!--colunas-->
+                    <th>Nível</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>  
+
+            <tbody><!--corpo da tabela-->
+                <tr>
+                    <td>HTML</td><!--valores das colunas-->
+                    <td>Iniciantes</td>
+                    <td>Capaz de construir estruturas de páginas web semânticas e responsivas</td>
+                </tr>
+
+                <tr>
+                    <td>CSS</td><!--valores das colunas-->
+                    <td>Intermediário</td>
+                    <td>Experiência com flexbox, grid e animações CSS</td>
+                </tr>
+
+                <tr>
+                    <td>JavaScript</td><!--valores das colunas-->
+                    <td>Básico</td>
+                    <td>Desenvolvimento de script do lado do cliente para interações.</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
     <footer>
         <p>Direitos reservados</p>
 
@@ -84,6 +123,38 @@
                 Telefone: <a href="tel:999999999">99999999</a>
             </address>
 
+            <form action="">
+                <label for="nome">Nome: </label>
+                <input type="text" id="nome" name="nome" required><br>
+
+                <label for="email">E-mail: </label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="telefone">Telefone: </label>
+                <input type="tel" id="telefone" name="telefone"><br>
+
+                <label for="assunto">Assunto: </label>
+                <select name="assunto" id="assunto">
+                    <option value="orcamento">Orçamento</option>
+                    <option value="duvida">Dúvida</option>
+                    <option value="outro">Outro</option>
+                </select>
+
+                <br>
+
+                <label for="mensagem">Mensagem: </label>
+                <textarea name="mensagem" id="mensagem" cols="20" rows="5" required></textarea><br>
+
+                <input type="checkbox" id="inscricao" name="inscricao">
+                <label for="inscricao">Deseja receber minhas newsletter?Fique por dentro.</label>
+
+                <br>
+
+                <input type="submit" value="Enviar mensagem">
+
+
+
+            </form>
 
         </section>
 
