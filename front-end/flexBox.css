@@ -1,0 +1,40 @@
+/*flexboxfroggy.com site para jogar e aprender mais*/
+.container{
+    background-color: rgb(175, 200, 223);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    width: 110px;
+    /*height: 500px;*/
+    display: flex;/*é o que flexibiliza o elementos filhos dentro do pai*/
+    /*por padrão o flex direction fica no modo row(linha) ou se colocar somente flex também fica em row*/
+    /*flex-direction: row-reverse;(reverso da direita para esquerda)*/
+    /*flex-direction: column; column: colunas e columun reverse é como no row*/
+    flex-direction: row;
+    /*justify-content: center; flex-start;é o padrão do justify content /space-between da um espaçamento igual entre eles ocupando todo o container nesse caso */
+    /*align-items: stretch; alinhamento entre os itens*/
+    flex-wrap: wrap;/*quebra de pagina / padrão nowarp: não quebre a linha*/
+    /*align-content: center; é mais usado junto do flex wrap*/
+    column-gap: 20px;/*aplica espaçamento entre as laterais*/
+
+}
+.box{
+    height: 50px;
+    width: 50px;
+    border:3px solid #000;
+    border-radius: 3px;
+
+}
+#box1{
+    background-color: rgb(247, 247, 172);
+    flex-grow: 1;/*para aumentar o item*/
+}
+
+#box2{
+    background-color: rgb(215, 176, 252);
+    flex-grow: 3;
+}
+
+#box3{
+    background-color: rgb(240, 154, 154) ;
+    flex-grow: 1;
+}

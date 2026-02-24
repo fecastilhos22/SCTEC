@@ -1,0 +1,39 @@
+
+/*p{
+    margin: 20%;
+    padding: 20px;
+    border: 1px solid #000;
+}magin espaço ao redor(externo)/ padding: espaço interno/ border("borda"):fica entre o espaçamento(padding) e a margem
+width:largura height:altura display: modo de visualisação do elemento (block/inline/inline-block) box-sizing: tamanho*/
+
+/*p{
+    border:1px solid #000;/*para ficar mais fácil para entender o exercício 
+}*/
+
+/*.block {
+    display: block;
+}um elemento ocupa a linha inteira*/
+
+/*.in-line{
+    display: inline;
+    margin-top: 20px;
+    display: inline-block permite mudar o posicionamento do elemento
+}mais de um elememento ocupa a mesma linha*/
+
+.display-block{
+    display: block;
+    height: 200px;
+    background-color: blue;
+    border: 1px solid #000;
+}
+.display-inline{
+    display: inline;
+    background-color: green;
+    border: 1px solid #000 ;
+}
+.display-inline-block{
+    display: inline-block;
+    background-color: pink;
+    border: 1px solid #000;
+    margin-top: 30px;
+}
