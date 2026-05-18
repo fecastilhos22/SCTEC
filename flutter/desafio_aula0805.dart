@@ -122,6 +122,22 @@ print(listaFormatada);
   print("\n\nMÉDIAS\n");
   //*Contexto: Agora você precisar gerar alguns relatórios sintéticos para o usuário:
 
+  double mediaValorVenda = 0;
+  double mediaValorCompra = 0;
+  double mediaLucro = 0;
+  int maiorParteDaLucro = 0;
+  int maiorParteLucroAcimaDeDois = 0;
+
+  listaFormatada.forEach((element){
+    
+
+  },);
+
+
+
+
+
+
   //? Imprimir a média do valor de venda: Média valor venda: R$21,00
   //? Imprimir a média do valor de compra: Média valor compra: R$18,00
   //? Imprimir a média do lucro: Média valor compra: R$3,50
