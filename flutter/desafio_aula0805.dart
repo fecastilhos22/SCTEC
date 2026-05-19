@@ -99,7 +99,7 @@ void main() {
     };//adicionando a chave lucro na lista
   }).toList();//transforma para lista novamente(sempre que usar o map tem que usar o toList)
 
-print(listaFormatada);
+//print(listaFormatada);para testar se a lista está ok
 
  print("\n\nPRODUTOS\n");
 
@@ -122,35 +122,68 @@ print(listaFormatada);
   print("\n\nMÉDIAS\n");
   //*Contexto: Agora você precisar gerar alguns relatórios sintéticos para o usuário:
 
-  double mediaValorVenda = 0;
-  double mediaValorCompra = 0;
-  double mediaLucro = 0;
-  int maiorParteDaLucro = 0;
-  int maiorParteLucroAcimaDeDois = 0;
+  //declaração das variáveis
+  double totalValorVenda = 0;
+  double totalValorCompra = 0;
+  double totalLucro = 0;
+  int quantidadeDaLucro = 0;
+  int quantidadeLucroAcimaDeDois = 0;
 
+  //percorre a lista e "pegar"o valor
   listaFormatada.forEach((element){
-    
+    totalLucro += element['lucro'];
+    totalValorVenda += element['valor_venda'];
+    totalValorCompra += element['valor_compra'];
+
+    //("\n\nMAIOR PARTE DOS PRODUTOS DA LUCRO?:\n"); para atender essa solicitação
+    if (element ['lucro'] > 0){ //testa se o lucro é maior que 0, se sim incrementa 
+      quantidadeDaLucro++;
+    }
+
+    //("\n\nMAIOR PARTE DOS PRODUTOS DA LUCRO ACIMA DE R\$2,00?:\n");para atender essa solicitação
+    if (element['lucro'] > 2){
+      quantidadeLucroAcimaDeDois++;//testa os valores de lucro acima de R$2 e incrementa
+    }
 
   },);
 
-
-
-
-
-
   //? Imprimir a média do valor de venda: Média valor venda: R$21,00
+  print (
+  "Média valor venda: ${(totalValorVenda / listaFormatada.length).transformarEmDinheiroBr()}",
+  );//lenght (tamanho da lista)
+
   //? Imprimir a média do valor de compra: Média valor compra: R$18,00
-  //? Imprimir a média do lucro: Média valor compra: R$3,50
+  print (
+  "Média valor compra: ${(totalValorCompra / listaFormatada.length).transformarEmDinheiroBr()}",
+  );
+
+  //? Imprimir a média do lucro: Média valor lucro: R$3,50
+  print (
+  "Média valor lucro: ${(totalLucro / listaFormatada.length).transformarEmDinheiroBr()}",
+  );
 
   print("\n\nMAIOR PARTE DOS PRODUTOS DA LUCRO?:\n");
   //? imprimir "SIM" ou "NÃO"
+  print(quantidadeDaLucro > (listaFormatada.length / 2) ? "SIM" : "NÃO");
 
   print("\n\nMAIOR PARTE DOS PRODUTOS DA LUCRO ACIMA DE R\$2,00?:\n");
   //? imprimir "SIM" ou "NÃO"
+  print(quantidadeLucroAcimaDeDois > (quantidadeDaLucro / 2) ? "SIM" : "NÃO");
 
   print("\n\nPRODUTOS QUE DÃO PREJUIZO:\n");
   //*Contexto: Agora você precisar gerar um relatório analítico mostrando
   //*os produtos que dão prejuizo:
+
+  //o where vai retornar uma com uma "sublista" com os itens que atenderem o teste lógico e ir filtrando
+  final listaDePrejuizo = listaFormatada.where((element) => element ['lucro'] < 0);
+
+  //forEach para percorrer a lista
+  listaDePrejuizo.forEach((element) {
+    String id = element['id'].toString();
+    String produto = element['produto'];
+    String lucro = (element ['lucro'] as double).transformarEmDinheiroBr();
+    print("ID: $id | PRODUTO: $produto | PREJUIZO:$lucro");
+  },);
 
   //? imprimir produtos que dão prejuizo, para cada linha imprimir conforme exemplo: ID: 1 | PRODUTO: SABÃO | PREJUIZO: -R$3,00
 }
