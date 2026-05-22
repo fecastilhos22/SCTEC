@@ -19,10 +19,10 @@ class Aluno {
   final String? telefone;
 
   //construtor nomeado para converter(receber) um Map em uma lista como solicitado no exercício e transformar em Aluno
-  Aluno.fromMap(Map map)
-  : id = map['id'], //id no Map na "posição/local" id no Map
-    nome = map['nome'], //nome no Map na "posição" nome no Map
-    telefone = map['telefone'];//telefone no Map na "posição" telefone no Map 
+  Aluno.fromMap(Map map) //os :(dois pontos) significa que precisa esperar antes de inicializar o programa(null safety)
+  : id = map['id'], //pega o id na "posição/local" id no Map
+    nome = map['nome'], //pega o nome na "posição" nome no Map
+    telefone = map['telefone'];//pega o telefone na "posição" telefone no Map 
 }
 
 List<Map<String, dynamic>> alunos = [
