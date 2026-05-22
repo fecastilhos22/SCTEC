@@ -20,7 +20,7 @@ class Pedido{
   Pedido.fromMap(Map map)
     : id = map['id_pedido'], //id no Map na "posição/local" id no Map
       data = map['data_criacao'],
-      status = map['status'];
+      status = map['status'],
       cliente = Cliente.fromMap(map['cliente'],),//pegando o map de cliente e transformando em objeto
       pagamento = Pagamento.fromMap(map['pagamento'],),
       produtos = (map['itens'] as List)
@@ -61,7 +61,7 @@ class Produto{
   Produto.fromMap(Map map)
   : id = map['id_produto'],
     nome = map['nome'], 
-    preco = map['preco_unitario'];
+    preco = map['preco_unitario'],
     quantidade = map['quantidade'];
 }
 
