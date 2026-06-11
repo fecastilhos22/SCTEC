@@ -1,13 +1,31 @@
+
+void main(){
+  //variável que vai guardar a lista e transforma-la em objeto
+  final listaConvertida = listaPedidos.map((e) => Pedido.fromMap(e)).toList();
+
+  //* 4 percorro minha lista de objeto via forEach para imprimir os elementos pedidos no exercício
+  listaConvertida.forEach((element) => print(
+    "Id pedido: ${element.id},Id cliente: ${element.cliente.id}, metodo pagamento : ${element.pagamento.metodo}, quantidade de produto: ${element.produtos.length}",
+    ),//element.pagamento.metodo está pegando metodo dentro de pagamento, assim como nos outros
+  );
+}
 class Pedido{
   final String id;
-  final double dataCriacao;
+  final String data;
   final String status;
+  final Cliente cliente; //pegando da classe cliente
+  final Pagamento pagamento; //pegando da classe pagamento
+  final List<Produto> produtos;
 
   //construtor nomeado para converter(receber) um Map em uma lista como solicitado no exercício e transformar 
   Pedido.fromMap(Map map)
-  : idPedido = map['id_pedido'], //id no Map na "posição/local" id no Map
-    dataCriacao = map['data_criacao'],
-    status = map['status'];
+  : id = map['id_pedido'], //id no Map na "posição/local" id no Map
+    data = map['data_criacao'],
+    status = map['status'],
+    cliente = Cliente.fromMap(map['cliente'],),//pegando o map de cliente e transformando em objeto
+    pagamento = Pagamento.fromMap(map['pagamento'],),
+    produtos = (map['itens'] as List)
+        .map((e) => Produto.fromMap(e)).toList();//transformando a listas de maps em lista de objetos
 } 
 
 class Cliente {
@@ -44,16 +62,10 @@ class Produto{
   Produto.fromMap(Map map)
   : id = map['id_cliente'],
     nome = map['nome'], 
-    preco = map['preco'];
+    preco = map['preco'],
     quantidade = map['quantidade'];
 }
-void main(){
-  //variável que vai guardar a lista
-  final listaConvertida = listaPedidos.map((e) => Pedido.fromMap(e)).toList();
 
-  //* 4 percorro minha lista de objeto via forEach para imprimir o nome de cada aluno
-  listaConvertida.forEach((element) => print(element.idPedido));
-}
 
 
 final listaPedidos = [
